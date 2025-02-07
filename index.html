@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+    <meta name="renderer" content="webkit">
+<meta name="force-rendering" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
+    <meta name="msapplication-TileColor" content="#af0a1a">
+    <meta name="theme-color" content="#ffffff">
+      <meta name="description" content="YouTube Trending Music">
+    <title>DV4</title>
+    <meta name="theme-color" content="#007aff">
+     	 	
+    <link rel="shortcut icon" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="manifest" href="pwa-manifest.json">
+    <script type='text/javascript' src="js/main.js"></script>	
+    	
+    <!-- Fonts and Stylesheets -->
+    	
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+    
+
+    <style>    	
+ /* CSS Reset */
+* {margin:0;padding:0;box-sizing: border-box;font-family: Arial, sans-serif;user-select: none; -ms-overflow-style: none;scrollbar-width: none; /* Firefox */ }
+
+*::-webkit-scrollbar {display: none; /* Safari and Chrome */ }
+
+html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";-webkit-font-smoothing:auto;text-rendering:optimizeLegibility;-webkit-tap-highlight-color:transparent;scroll-behavior:smooth;text-rendering:optimizeLegibility;user-select:none;overflow:hidden;-webkit-user-select:none;-webkit-touch-callout:none !important;user-select:none;width:100%;height:100%}
+
+
+    
+/* Variabel CSS */
+:root {
+--background: #F8F9FA;
+--text-color: #333;
+--card-background: #ff5555;
+--card-text: #fff;
+--box-shadow:0 4px 8px rgba(0,0,0,0.2);
+--border-radius: 8px;
+--max-width: 600px;
+--black: #000;
+--warning-border:2px solid #444;
+--warning-shadow:0 4px 16px rgba(0,0,0,0.4);
+--width: 100%;
+--height:100vh;
+--height90:90vh; 
+--padding: 20px;
+--font-size: 1rem;
+--font-family: 'Arial', sans-serif;
+--border: none; 
+--width: 100%;
+--active-color: #222;
+--transition-speed: 0.4s ease-in-out;
+--nav-bg:rgba(0,0,0,.6);
+--nav-bg-hover:rgba(0,0,0,.8);
+--nav-text:#fff;
+--nav-size:50px;
+--nav-border-radius:50%;
+--shadow-color:rgba(0,0,0,.2); }
+
+
+/* Global Styles */
+body {margin:0;padding:0;background-color:var(--black);color:var(--text-color);font-family:var(--font-family);height:var(--height);overflow-y: scroll;scroll-snap-type: y mandatory;
+-webkit-overflow-scrolling:touch;
+-webkit-text-size-adjust:100%;
+-ms-text-size-adjust:100%;width:100%; height:100%;text-rendering: optimizeLegibility; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; hyphens:auto;}
+
+ 
+
+.scroll{width:var(--width);max-width:var(--max-width);height:var(--height);display:flex;flex-direction:column;overflow-y:auto;scroll-snap-type:y mandatory;scroll-snap-stop:always;overscroll-behavior-y:contain;margin:auto;scrollbar-width:none;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scroll-padding-top:0}.scroll::-webkit-scrollbar{display:none}.iframe-container{width:var(--width);max-width:var(--max-width);height:var(--height);min-height:100vh;display:flex;justify-content:center;align-items:center;scroll-snap-align:start;background-color:var(--black);position:relative;border-radius:var(--border-radius);margin-top:10px;transition:background-color var(--transition-speed),transform var(--transition-speed),opacity var(--transition-speed);opacity:.4;transform:scale(.95)}.iframe-container.active{background-color:var(--active-color);opacity:1;transform:scale(1)}
+
+/* Fallback untuk browser lama */
+@supports not (scroll-snap-type:y mandatory) {.scroll {scroll-behavior:smooth;} }
+
+
+
+.iframe-container iframe {width:var(--width);height:var(--height90);border: none;border-radius:var(--border-radius);
+background-color:var(--black);margin-top:10px;}
+
+.iframe-container iframe::-webkit-scrollbar {display:none;}
+    
+
+ iframe{width:var(--width);height: var(--height90);border:none;border-radius:var(--border-radius);background-color:var(--black);margin-top:10px;}   
+    
+       
+.video-info{position:absolute;top:10px;z-index:10;width:60%;padding:5px;justify-content:center;align-items:center;background-color:rgba(255,255,255,0.1);border-radius:10px;left:50%;transform:translateX(-50%)}.video-info h2{margin:0;font-size:var(--font-size);color:white}.video-info h2::before{content:"ID:";font-family:'Great Vibes',cursive;font-size:var(--font-size);border-radius:10px;padding:2px 5px;background-color:rgba(0,0,0,0.2)}.video-info p{font:0.8rem/1 'Roboto',sans-serif;color:var(--text-color)}.top{background-color:transparent;color:white;border:none;border-radius:50%;width:50px;height:50px;display:flex;justify-content:center;align-items:center;z-index:1000;cursor:pointer;text-decoration:none;position:absolute;top:2px;right:75px}.top::before{content:"Link";font:var(--font-size)/1 'Roboto',sans-serif;border-radius:10px;padding:2px 5px;background-color:rgba(0,0,0,0.2)}.top .material-icons {font-size: 24px;color: #fff;} 
+
+
+.warnings{background-color:var(--card-background);color:var(--card-text);padding:var(--padding);border-radius:var(--border-radius);text-align:center;max-width:400px;margin:0 20px;display:flex;flex-direction:column;justify-content:center;align-items:center}.warnings h1{font-size:24px;margin-bottom:10px}.warnings p{font-size:16px}@media(min-width:768px){.non-mobile-warning{display:flex;justify-content:center;align-items:center;height:var(--height);background-color:#000}.scroll-container{display:none}}@media(max-width:767px){.non-mobile-warning{display:none}}
+
+ .menu{background-color:transparent;color:white;position:fixed;top:10px;border:none;border-radius:50%;width:100%;max-width:600px;height:50px;display:flex;left:50%;transform:translateX(-50%);justify-content:center;align-items:center;z-index:1000;cursor:pointer;text-decoration:none}
+ 
+ .back,.share{background-color:rgba(255,255,255,.1);color:white;border:1px solid rgba(255,255,255,.3);height:30px;display:flex;justify-content:center;align-items:center;z-index:1000;cursor:pointer;text-decoration:none;box-shadow:0 4px 8px rgba(0,0,0,.1);transition:background-color .3s,box-shadow .3s}
+ 
+ .back{border-radius:50%;width:30px;font-size:34px;}
+ .share{border-radius:20%;width:40px;}
+  
+  
+ .back:hover,.share:hover{background-color:rgba(255,255,255,.2);box-shadow:0 6px 12px rgba(0,0,0,.2)}.back{position:fixed;top:10px;left:5px}.share{position:absolute;top:10px;right:5px;float:right}.share{position:absolute;top:10px;right:5px;float:right}.back:hover,.share:hover{color:#0056b3;background-color:transparent}.back .material-icons,.share .material-icons{font-size:24px;color:#fff}
+ 
+  
+.nav-buttons{position:fixed; bottom:0; left:50%;transform:translateX(-50%);display:flex;gap:15px;z-index:1000; padding:5px;font-size:18px;background-color:rgba(255,255,255,0.1);border-radius:10px 10px 0 0;width:30%;}.nav-buttons button{width:var(--nav-size);height:40px;background-color:rgba(255,255,255,0.2); color:var(--nav-text);border:none;border-radius:10px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .2s ease-in-out;box-shadow:0 4px 10px var(--shadow-color);backdrop-filter:blur(10px)}.nav-buttons button:hover{background:var(--nav-bg-hover)}.nav-buttons button:active{transform:scale(.9)}@media(max-width:600px){.nav-buttons button{width:150px;height:40px;font-size:20px}}
+
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaWrapper.js/1.0.0/jquery.mediaWrapper.min.js"></script>
+    
+   
+</head>
+<body>
+<div class="warning"style="display:none;"> <div class="warnings"> <h1> 🚫 Akses Terbatas</h1> <p>Website ini hanya dapat diakses melalui perangkat mobile.</p> </div> </div>
+
+
+<div class="menu">
+<a href="index.html" class="back"> < </a> <a href="jav.html" class="share">Jav </a> </div>
+<div class="nav-buttons"> <button onclick="scrollToPrev()"> < </button>
+<button onclick="scrollToNext()"> > </button> </div>
+
+
+<div id="container" class="scroll"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/disable.js"></script>
+  <script src="js/keyboard.js"></script>
+  <script src="js/wrap.js"></script>
+  
+
+</body>
+</html> 
